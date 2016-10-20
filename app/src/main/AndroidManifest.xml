@@ -19,7 +19,9 @@
             android:name=".StaticActicity"
             android:label="@string/title_activity_static_acticity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DynamicActivity"></activity>
+        <activity
+            android:name=".DynamicActivity"
+            android:launchMode="singleInstance"></activity>
         <receiver android:name=".StaticReceiver"
             android:enabled="true"
             android:exported="true">
