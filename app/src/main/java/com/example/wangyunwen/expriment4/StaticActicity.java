@@ -27,7 +27,7 @@ public class StaticActicity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent("static");
+                Intent intent = new Intent("static_receiver");
                 Bundle bundle = new Bundle();
                 bundle.putString("name", list.get(i).getName());
                 bundle.putInt("src", list.get(i).getSrc());

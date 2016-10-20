@@ -24,7 +24,7 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="static_reciever"/>
+                <action android:name="static_receiver"/>
             </intent-filter>
         </receiver>
     </application>
