@@ -55,6 +55,11 @@ public class NewAppWidget extends AppWidgetProvider {
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             manager.updateAppWidget(new ComponentName(context, NewAppWidget.class), remoteViews);
         }
+        if(intent.getAction().equals("dynamic_widget")) {
+            remoteViews.setTextViewText(R.id.widget_name, bundle.getString("msg"));
+            AppWidgetManager manager = AppWidgetManager.getInstance(context);
+            manager.updateAppWidget(new ComponentName(context, NewAppWidget.class), remoteViews);
+        }
     }
 
     @Override

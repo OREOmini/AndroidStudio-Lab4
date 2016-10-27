@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class DynamicActivity extends AppCompatActivity {
     private final String DYNAMICACTION = "dynamic_receiver";
+    private final String DYNAMICWIDGET = "dynamic_widget";
     private boolean unregistered = true;
     private DynamicReceiver dynamicReceiver = new DynamicReceiver();
 
@@ -53,6 +54,10 @@ public class DynamicActivity extends AppCompatActivity {
                     bundle.putString("msg", msg);
                     intentd.putExtras(bundle);
                     sendBroadcast(intentd);
+
+//                    Intent intent = new Intent("dynamic_widget");
+//                    intent.putExtras(bundle);
+//                    sendBroadcast(intent);
                 }
             }
         });

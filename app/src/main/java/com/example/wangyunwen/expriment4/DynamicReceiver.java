@@ -3,7 +3,9 @@ package com.example.wangyunwen.expriment4;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -13,6 +15,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.RemoteViews;
+
+import layout.NewAppWidget;
 
 /**
  * Created by wangyunwen on 16/10/20.
@@ -42,6 +47,13 @@ public class DynamicReceiver extends BroadcastReceiver {
 
             Notification notification = builder.build();
             manager.notify(0, notification);
+
+            //widget
+            RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
+            remoteViews.setTextViewText(R.id.widget_name, bundle.getString("msg"));
+            remoteViews.setImageViewResource(R.id.widget_image, R.drawable.dynamic);
+            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+            appWidgetManager.updateAppWidget(new ComponentName(context, NewAppWidget.class), remoteViews);
         }
     }
 }
