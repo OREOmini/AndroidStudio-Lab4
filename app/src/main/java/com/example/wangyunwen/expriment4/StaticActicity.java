@@ -35,7 +35,7 @@ public class StaticActicity extends AppCompatActivity {
                 sendBroadcast(intent);
 
                 // widget
-                Intent intent1 = new Intent("android.appwidget.action.APPWIDGET_UPDATE");
+                Intent intent1 = new Intent("static_widget");
                 intent1.putExtras(bundle);
                 sendBroadcast(intent1);
             }

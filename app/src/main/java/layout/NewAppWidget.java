@@ -49,14 +49,9 @@ public class NewAppWidget extends AppWidgetProvider {
                 R.layout.new_app_widget);
         Bundle bundle = intent.getExtras();
 
-        if(intent.getAction().equals("android.appwidget.action.APPWIDGET_UPDATE")) {
+        if(intent.getAction().equals("static_widget")) {
             remoteViews.setTextViewText(R.id.widget_name, bundle.getString("name"));
             remoteViews.setImageViewResource(R.id.widget_image, bundle.getInt("src"));
-            AppWidgetManager manager = AppWidgetManager.getInstance(context);
-            manager.updateAppWidget(new ComponentName(context, NewAppWidget.class), remoteViews);
-        }
-        if(intent.getAction().equals("dynamic_widget")) {
-            remoteViews.setTextViewText(R.id.widget_name, bundle.getString("msg"));
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             manager.updateAppWidget(new ComponentName(context, NewAppWidget.class), remoteViews);
         }
