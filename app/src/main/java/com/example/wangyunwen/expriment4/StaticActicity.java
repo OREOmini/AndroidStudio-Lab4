@@ -33,6 +33,11 @@ public class StaticActicity extends AppCompatActivity {
                 bundle.putInt("src", list.get(i).getSrc());
                 intent.putExtras(bundle);
                 sendBroadcast(intent);
+
+                // widget
+                Intent intent1 = new Intent("android.appwidget.action.APPWIDGET_UPDATE");
+                intent1.putExtras(bundle);
+                sendBroadcast(intent1);
             }
         });
     }

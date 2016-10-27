@@ -21,13 +21,25 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DynamicActivity"
-            android:launchMode="singleInstance"></activity>
-        <receiver android:name=".StaticReceiver"
+            android:launchMode="singleInstance" />
+
+        <receiver
+            android:name=".StaticReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="static_receiver"/>
+                <action android:name="static_receiver" />
             </intent-filter>
+        </receiver>
+
+        <receiver android:name="layout.NewAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/new_app_widget_info" />
         </receiver>
     </application>
 
